@@ -1,0 +1,10 @@
+.hero.is-info {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      #00000080
+    ), url('../assets/images/creditlanding.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
