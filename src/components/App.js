@@ -14,6 +14,8 @@ const App = () => {
                 <Route exact path="/" component={Landing} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={SignUp} />
+                <Route path="/forgotpassword" component={SignUp} />
+                <Route path="/help" component={SignUp} />
             </React.Fragment>
         </Router>
     )

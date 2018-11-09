@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const merge = require("webpack-merge");
+const path = require("path");
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -25,23 +26,26 @@ module.exports = env => {
               ]
             },
             {
-              test: /\.(png|jp(e*)g|svg|gif)$/,  
+              test: /\.(png|jp(e*)g|svg|gif)$/,
               use: [{
                   loader: 'url-loader',
-                  options: { 
+                  options: {
                       limit: 8000, // Convert images < 8kb to base64 strings
                       name: 'images/[hash]-[name].[ext]'
-                  } 
+                  }
               }]
           }
           ]
+        },
+        resolve: {
+          modules: [path.resolve(__dirname, "src"), "node_modules"]
         },
         plugins: [
           new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: './index.html'
           }),
-          new webpack.DefinePlugin({ 
+          new webpack.DefinePlugin({
             'process.env.VERSION': JSON.stringify(env.VERSION),
             'process.env.PLATFORM': JSON.stringify(env.PLATFORM)
           }),
