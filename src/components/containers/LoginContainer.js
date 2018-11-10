@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { login }
 
 export const mapStateToProps = state => ({
-    userLogged:
+    userLogged: selectUser(state)
 })
 
-export const mapDispatchToProps = {
+export const mapDispatchToProps = dispatch = ({
+    onLogin: () => dispatch(login)
+})
 
-}
-
-export const WithAuthentication = (WrappedComponent) => {
+export const ContainerAuthentication = (WrappedComponent) => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {
@@ -19,4 +20,4 @@ export const WithAuthentication = (WrappedComponent) => {
   return hocComponent
 }
 
-export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(WithAuthentication(WrapperComponent))
+export default WithAuthentication => connect(mapStateToProps, mapDispatchToProps)(ContainerAuthentication(WithAuthentication))

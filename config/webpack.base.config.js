@@ -34,11 +34,12 @@ module.exports = env => {
                       name: 'images/[hash]-[name].[ext]'
                   }
               }]
-          }
+            }
           ]
         },
         resolve: {
-          modules: [path.resolve(__dirname, "src"), "node_modules"]
+          extensions: ['.js','.json'],
+            modules: ['src', 'node_modules']
         },
         plugins: [
           new HtmlWebpackPlugin({

@@ -77,8 +77,8 @@ class Login extends React.Component {
                     </div>
                     <p className="has-text-grey">
                         <Link to="/signup">Sign Up</Link> &nbsp;·&nbsp;
-                        <a href="../">Forgot Password</a> &nbsp;·&nbsp;
-                        <a href="../">Need Help?</a>
+                        <Link to="/forgotpassword">Forgot Password</Link> &nbsp;·&nbsp;
+                        <Link to="/help">Need Help?</Link>
                     </p>
                 </div>
             </div>

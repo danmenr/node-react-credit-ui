@@ -1,23 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Provider } from "react-redux";
 import Login from "./Login";
 import Landing from "./Landing";
 import SignUp from "./SignUp";
-import NavBar from "./NavBar";
+import Help from "./Help";
+import store from "store";
 
 import "bulma/bulma.sass";
 
 const App = () => {
     return (
-        <Router>
-           <React.Fragment>
-                <Route exact path="/" component={Landing} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={SignUp} />
-                <Route path="/forgotpassword" component={SignUp} />
-                <Route path="/help" component={SignUp} />
-            </React.Fragment>
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <React.Fragment>
+                    <Route exact path="/" component={Landing} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/signup" component={SignUp} />
+                    <Route path="/forgotpassword" component={SignUp} />
+                    <Route path="/help" component={Help} />
+                </React.Fragment>
+            </Router>
+        </Provider>
     )
 }
 export default App;

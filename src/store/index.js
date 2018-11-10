@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
-import creditSagas from "sagas/sagas";
+import creditSagas from "sagas";
 import rootReducer from "reducers";
 import {login} from "actions/authentication";
 
@@ -38,8 +38,8 @@ const store = createStore(
   composeEnhancers(applyMiddleware(logger, crashReporter, sagaMiddleware))
 );
 
+sagaMiddleware.run(creditSagas);
 
 store.dispatch(login({login:'', password:''}))
-sagaMiddleware.run(creditSagas);
 
 export default store;
