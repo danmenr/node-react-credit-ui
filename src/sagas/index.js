@@ -1,7 +1,7 @@
 import { takeLatest } from "redux-saga/effects";
-import { AUTHENTICATION_LOGIN_REQUEST } from "constants/action-types";
-import {login} from "./authentication";
+import { USER_LOGIN_REQUEST } from "constants/action-types";
+import {login} from "./user";
 
 export default function* creditSagas() {
-  yield takeLatest(AUTHENTICATION_LOGIN_REQUEST, login);
+  yield takeLatest(USER_LOGIN_REQUEST, login);
 }
