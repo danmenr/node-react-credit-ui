@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import creditSagas from "sagas";
 import rootReducer from "reducers";
-import {login} from "actions/authentication";
+import {login} from "actions/user";
 
 const sagaMiddleware = createSagaMiddleware();
 
