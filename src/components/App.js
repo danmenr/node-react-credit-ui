@@ -5,7 +5,9 @@ import Login from "./Login";
 import Landing from "./Landing";
 import SignUp from "./SignUp";
 import Help from "./Help";
+import WithAuthentication from "./containers/WithAuthentication"
 import store from "store";
+
 
 import "bulma/bulma.sass";
 
@@ -15,7 +17,7 @@ const App = () => {
             <Router>
                 <React.Fragment>
                     <Route exact path="/" component={Landing} />
-                    <Route path="/login" component={Login} />
+                    <Route path="/login" component={WithAuthentication(Login)} />
                     <Route path="/signup" component={SignUp} />
                     <Route path="/forgotpassword" component={SignUp} />
                     <Route path="/help" component={Help} />
