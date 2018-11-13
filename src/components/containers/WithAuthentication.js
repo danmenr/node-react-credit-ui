@@ -2,13 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { login } from "actions/user";
+import { selectUserLogged } from "selectors"
+import { bindActionCreators } from "redux";
 
 const mapStateToProps = state => ({
-    userLogged:  ''
+  userLogged: selectUserLogged(state)
 })
-const mapDispatchToProps = {
-    login
-}
+const mapDispatchToProps =  dispatch => bindActionCreators({
+  login
+}, dispatch);
 const AuthenticationContainer = (WrappedComponent) => {
   const authenticationComponent = ({ ...props }) => <WrappedComponent {...props} />
 
