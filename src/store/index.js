@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import creditSagas from "sagas";
 import rootReducer from "reducers";
-import {login} from "actions/user";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -39,7 +38,5 @@ const store = createStore(
 );
 
 sagaMiddleware.run(creditSagas);
-
-store.dispatch(login({login:'', password:''}))
 
 export default store;

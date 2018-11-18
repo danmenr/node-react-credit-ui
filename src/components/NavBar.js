@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-const NavBar = props => 
+const NavBar = props =>
 <nav className="navbar" role="navigation" aria-label="main navigation">
 <div className="navbar-brand">
   <a className="navbar-item" href="https://bulma.io">

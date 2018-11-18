@@ -1,6 +1,6 @@
-import * as Yup from 'yup';
 import React from "react";
 import { Formik } from "formik";
+import * as Yup from 'yup';
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 
@@ -14,6 +14,9 @@ const LoginSchema = Yup.object().shape({
 
 class Login extends React.Component {
     render() {
+
+        const { login } = this.props;
+
         return (
     <section className="hero is-fullheight">
         <div className="hero-body">
@@ -26,8 +29,8 @@ class Login extends React.Component {
                             initialValues={{ email: '', password: ''}}
                             validationSchema={LoginSchema}
                             onSubmit={values => {
-                              // same shape as initial values
-                              console.log(values);
+                                login(values);
+                                console.log(values);
                             }}
                             >
                             {({
