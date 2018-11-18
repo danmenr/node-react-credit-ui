@@ -20,7 +20,7 @@ const SignUpSchema = Yup.object().shape({
 class SignUp extends React.Component {
     render() {
 
-        const { signup } = this.props;
+        const { signUp } = this.props;
 
         return (
     <section className="hero is-fullheight">
@@ -31,10 +31,10 @@ class SignUp extends React.Component {
                     <p className="subtitle has-text-grey">Please fill form to proceed.</p>
                     <div className="box">
                     <Formik
-                            initialValues={{ name: '', email: '', password: '', passwrod2: ''}}
+                            initialValues={{ name: '', email: '', password: '', password2: ''}}
                             validationSchema={SignUpSchema}
                             onSubmit={values => {
-                                signup(values);
+                                signUp(values);
                                 console.log(values);
                             }}
                             >

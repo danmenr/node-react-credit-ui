@@ -57,7 +57,8 @@ class CreditApi extends Api {
     constructor() {
         super();
         this.users = {
-            login: credentials => this.api.post(`users/login`,credentials)
+            login: credentials => this.api.post(`users/login`,credentials),
+            signUp: userInfo => this.api.post(`users/register`, userInfo)
         }
     }
 }

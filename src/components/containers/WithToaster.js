@@ -26,38 +26,13 @@ const position = {
 };
 
 const WithToaster = WrappedComponent => {
-    return class NotificationContainer extends React.Component {
-
-
-        componentDidMount() {
-            this.notifySuccess('test','test');
-        }
-
-       notifySuccess = (title, message) => {
-        // ButterToast.raise({
-        //         content: ({ dismiss }) => <Notification dismiss success title message/>
-        //     });
-        ButterToast.raise({
-            content: ({ toastId, dismiss }) => <div onClick={dismiss}>woohoo!</div>
-        });
-        }
-
-        render() {
-
-            return (
-                <React.Fragment>
-                    <WrappedComponent
-                        {...this.props} />
-                        <button onClick={() => this.notifySuccess('test','test')} />
-                    <ButterToast ref={tray => this.tray = tray}  position={{
-                        vertical: POS_TOP,
-                        horizontal: POS_RIGHT
-                    }} />
-                </React.Fragment>
-            )
-        }
+    const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+    hocComponent.propTypes = {
     }
+
+    return hocComponent
 };
 
 export default WithToaster;
+
 
