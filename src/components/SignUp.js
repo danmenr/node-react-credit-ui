@@ -20,7 +20,7 @@ const SignUpSchema = Yup.object().shape({
 class SignUp extends React.Component {
     render() {
 
-        const { signUp } = this.props;
+        const { signUp, userCreated } = this.props;
 
         return (
     <section className="hero is-fullheight">

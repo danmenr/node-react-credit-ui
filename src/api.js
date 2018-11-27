@@ -53,12 +53,26 @@ class Api {
       }
 }
 
+export function authHeader() {
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    if(user && user.token) {
+        return { 'Autorization': 'Bearer ' + user.token };
+    } else {
+        return {};
+    }
+}
+
 class CreditApi extends Api {
     constructor() {
         super();
         this.users = {
             login: credentials => this.api.post(`users/login`,credentials),
             signUp: userInfo => this.api.post(`users/register`, userInfo)
+        }
+        this.credits = {
+            saveCredit: credit => this.api.post(`credits`, credit),
+            getCredits: () => this.api.get(`credits`)
         }
     }
 }

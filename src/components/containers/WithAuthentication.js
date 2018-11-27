@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { login, signUp } from "actions/user";
 import { selectUserLogged } from "selectors"
 import { bindActionCreators } from "redux";
-import { selectUserCreated } from "../../selectors";
 
 const mapStateToProps = state => ({
   userLogged: selectUserLogged(state),
