@@ -13,6 +13,7 @@ import WithAuthentication from "./containers/WithAuthentication";
 import WithToaster from "./containers/WithToaster";
 import WithCredit from "./containers/WithCredit";
 import WithCreditList from "./containers/WithCreditList";
+import WithCreditPayments from "./containers/WithCreditPayments";
 import PrivateRoute from "routes/PrivateRoute";
 import store from "store";
 import "bulma/bulma.sass";

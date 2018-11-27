@@ -33,7 +33,7 @@ export default class CreditList extends Component {
             </thead>
             <tbody>
                 { credits.map((credit) => {
-                  return(  <tr>
+                  return(  <tr key={credit._id}>
                     <th>{credit.name}</th>
                     <th>{credit.amount}</th>
                     <th>{credit.payments}</th>
